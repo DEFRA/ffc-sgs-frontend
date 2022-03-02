@@ -1,0 +1,8 @@
+{{- include "ffc-helm-library.deployment" (list . "ffc-sgs-frontend.deployment") -}}
+{{- define "ffc-sgs-frontend.deployment" -}}
+spec:
+  template:
+    spec:
+      containers:
+      - {{ include "ffc-helm-library.container" (list . "ffc-sgs-frontend.container") }}
+{{- end -}}
